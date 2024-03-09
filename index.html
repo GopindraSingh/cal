@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developers Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .developer-column {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .developer {
+            text-align: center;
+        }
+
+        .developer img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .calculator {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        input[type="number"] {
+            width: 100px;
+            padding: 8px;
+            margin: 5px;
+        }
+
+        input[type="button"] {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+
+        .output-images {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .output-images img {
+            margin-bottom: 10px;
+        }
+
+        .circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+
+        .rectangle {
+            width: 1200px;
+            height: 444px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Developers Page</h1>
+    </div>
+
+    <div class="developer-column">
+        <div class="developer">
+            <img src="gopindra_image.jpg" alt="Gopindra Singh">
+            <p>Gopindra Singh</p>
+        </div>
+
+        <div class="developer">
+            <img src="hari_image.jpg" alt="Hari">
+            <p>Hari</p>
+        </div>
+    </div>
+
+    <div class="calculator">
+        <label for="project-label">This is final year project</label><br><br>
+        <input type="number" id="num1" placeholder="Enter number">
+        <input type="number" id="num2" placeholder="Enter number">
+        <input type="button" value="Calculate" onclick="calculate()">
+        <div class="output-images" id="outputImages"></div>
+    </div>
+
+    <script>
+        function calculate() {
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+            var sum = num1 + num2;
+            var outputImages = document.getElementById('outputImages');
+            outputImages.innerHTML = ''; // Clear previous images
+
+            // Create new images
+            var image1 = document.createElement('img');
+            image1.src = 'output_image1.jpg';
+            image1.alt = 'Output Image 1';
+            image1.className = 'circle'; // Apply circle style
+
+            var image2 = document.createElement('img');
+            image2.src = 'output_image2.jpg';
+            image2.alt = 'Output Image 2';
+            image2.className = 'rectangle'; // Apply rectangle style
+
+            outputImages.appendChild(image1);
+            outputImages.appendChild(image2);
+        }
+    </script>
+
+</body>
+
+</html>
